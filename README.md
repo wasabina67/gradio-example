@@ -1,6 +1,12 @@
 # gradio-example
 Gradio example
 
+## Setup
+
+```bash
+uv sync
+```
+
 ## Run
 
 ```bash
