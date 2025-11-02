@@ -23,8 +23,9 @@ def translate(text):
 
     result = ""
     for chunk in stream:
-        result += chunk.message.content
-        yield result
+        if chunk.message.content is not None:
+            result += chunk.message.content
+            yield result
 
 
 def main():
