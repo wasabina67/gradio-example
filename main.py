@@ -6,11 +6,17 @@ client = Client(host='http://localhost:11434')
 
 def translate(text):
     messages = [
-        {},
-        {},
+        {
+            "role": "system",
+            "content": "あなたは英語から日本語への翻訳に特化した優秀なAIアシスタントです。回答は翻訳文にとどめ、日本語に翻訳するだけです。",
+        },
+        {
+            "role": "user",
+            "content": f"次の英語を日本語に翻訳して下さい。\n{text}",
+        },
     ]
     stream = client.chat(
-        model="",
+        model="gpt-oss:20b",
         messages=messages,
         stream=True,
     )
